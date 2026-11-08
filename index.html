@@ -122,27 +122,39 @@
   .story__copy p { font-size: var(--v-t-lg); line-height: 1.5; max-width: 30ch; }
   .story__slot { color: var(--v-ink-soft); }
 
-  /* ---- 3. коллекция: боковая лента из четырёх вкусов ---------------------- */
-  .vk-stage { display: flex; align-items: center; padding-top: 3.5rem; scroll-padding-inline: var(--v-gutter); }
-  .vk-rail { align-items: center; padding-inline: var(--v-gutter); gap: clamp(1rem, 2.4vw, 2rem); }
-  .vk-intro { flex: 0 0 auto; width: min(24rem, 78vw); padding-right: var(--v-5); }
+  /* ---- 3. коллекция: веер из четырёх плиток ------------------------------ */
+  .vkf__grid { display: grid; grid-template-columns: minmax(18rem, .8fr) 1.2fr; gap: clamp(1.5rem, 4vw, 4rem); align-items: center; }
+  .vkf__side { display: flex; flex-direction: column; gap: var(--v-6); }
   .vk-intro p { margin-top: var(--v-4); color: var(--v-ink-soft); max-width: 26ch; }
-  .vk { --bg: #e8467c; --fg: #2b0a17; --tilt: -5deg;
-    position: relative; flex: 0 0 auto; width: min(66vw, 46rem); height: min(70svh, 36rem); border-radius: 28px; overflow: visible;
-    background: var(--bg); color: var(--fg); box-shadow: var(--v-e2);
-    display: grid; grid-template-columns: 1.05fr .95fr; align-items: stretch; padding: clamp(1.4rem, 2.6vw, 2.4rem); }
-  .vk::before { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; opacity: .5;
-    background: radial-gradient(70% 60% at 82% 38%, rgb(255 255 255 / .4), transparent 70%); }
-  .vk__img { position: absolute; right: 3%; bottom: 4%; width: 52%; height: 108%; display: flex; align-items: flex-end; justify-content: center; pointer-events: none; }
-  .vk__img img { width: auto; max-width: 100%; max-height: 100%; transform: rotate(var(--tilt)); filter: drop-shadow(0 20px 22px rgb(20 6 14 / .38)); }
-  .vk__t { position: relative; z-index: 2; display: flex; flex-direction: column; max-width: 20rem; }
-  .vk__t h3 { font-family: var(--v-font-display); font-weight: 400; font-size: clamp(2rem, 1.3rem + 2.2vw, 3.4rem); line-height: 1.05; }
-  .vk__t p { margin-top: var(--v-3); font-size: var(--v-t-sm); line-height: 1.5; }
-  .vk__t .vk__sostav { margin-top: auto; padding-top: var(--v-4); font-weight: 500; opacity: .86; }
-  .vk--sun { --bg: #ffc53d; --fg: #3a2300; --tilt: 4deg; }
-  .vk--sea { --bg: #2c6fe0; --fg: #f4f8ff; --tilt: -3deg; }
-  .vk--cocoa { --bg: #5a3320; --fg: #fff0d6; --tilt: 5deg; }
-  .vk-end { flex: 0 0 var(--v-gutter); }
+  .vkf__info { --bg: rgb(255 255 255 / .06); --fg: var(--v-ink); position: relative; min-height: 15rem; border-radius: 28px; padding: clamp(1.4rem, 2.4vw, 2.2rem);
+    background: var(--bg); color: var(--fg); box-shadow: inset 0 0 0 1px rgb(255 255 255 / .12); display: flex; flex-direction: column;
+    transition: background-color .35s var(--v-ease-out), color .35s var(--v-ease-out), box-shadow .35s; }
+  .vkf__info.is-on { box-shadow: var(--v-e2); }
+  .vkf__info::before { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; opacity: 0; transition: opacity .35s;
+    background: radial-gradient(70% 70% at 90% 10%, rgb(255 255 255 / .35), transparent 70%); }
+  .vkf__info.is-on::before { opacity: .5; }
+  .vkf__hint { margin: auto 0; color: var(--v-ink-soft); max-width: 22ch; }
+  .vkf__info h3 { position: relative; font-family: var(--v-font-display); font-weight: 400; font-size: clamp(2rem, 1.3rem + 2vw, 3.2rem); line-height: 1.05; }
+  .vkf__info p { position: relative; margin-top: var(--v-3); font-size: var(--v-t-sm); line-height: 1.5; max-width: 34ch; }
+  .vkf__info .vk__sostav { margin-top: auto; padding-top: var(--v-4); font-weight: 500; opacity: .86; }
+
+  .fan { position: relative; height: min(76svh, 40rem); --w: clamp(10rem, 17vw, 16rem); --step: 9deg; --spread: 18%; }
+  .vk { --bg: #e8467c; --fg: #2b0a17; --a: calc((var(--i) - 1.5) * var(--step));
+    position: absolute; left: 50%; bottom: 4%; width: var(--w); margin-left: calc(var(--w) / -2); z-index: calc(var(--i) + 1);
+    transform-origin: 50% 150%;
+    transform: translateX(calc((var(--i) - 1.5) * var(--spread))) rotate(var(--a));
+    transition: transform .5s cubic-bezier(.2, .9, .25, 1.15), filter .35s var(--v-ease-out); }
+  .vk--sun { --bg: #ffc53d; --fg: #3a2300; }
+  .vk--sea { --bg: #2c6fe0; --fg: #f4f8ff; }
+  .vk--cocoa { --bg: #5a3320; --fg: #fff0d6; }
+  .vk__t { display: none; }
+  .vk__pick { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: pointer; border-radius: 14px; }
+  .vk__pick img { display: block; width: 100%; height: auto; filter: drop-shadow(0 18px 20px rgb(4 14 26 / .5)); }
+  .vk__pick:focus-visible { outline: 3px solid #ffc53d; outline-offset: 6px; }
+  .fan.has-on .vk { filter: brightness(.72) saturate(.85); }
+  .fan.has-on .vk:not(.is-on) { transform: translateX(calc((var(--i) - 1.5) * var(--spread) * 1.08)) rotate(calc(var(--a) * 1.12)); }
+  .fan .vk.is-on { z-index: 9; filter: none;
+    transform: translateX(calc((var(--i) - 1.5) * var(--spread))) rotate(calc(var(--a) * .25)) translateY(-17%) scale(1.1); }
 
   /* ---- 4. качество ------------------------------------------------------- */
   .kach { position: relative; overflow: hidden; }
@@ -209,10 +221,10 @@
     .hero__copy { left: var(--v-gutter); right: var(--v-gutter); top: calc(var(--bar-h) + .5rem); max-width: none; }
     .hero__copy .v-display { max-width: 13ch; }
     .story__copy { right: var(--v-gutter); max-width: none; top: calc(var(--bar-h) + .5rem); }
-    .vk { width: 84vw; height: min(72svh, 33rem); grid-template-columns: 1fr; align-items: end; }
-    .vk__img { right: 4%; bottom: auto; top: -9%; width: 74%; height: 64%; }
-    .vk__t { max-width: none; align-self: end; }
-    .vk__t .vk__sostav { margin-top: var(--v-4); }
+    .vkf__grid { grid-template-columns: 1fr; }
+    .vkf__side { display: contents; }
+    .vkf__info { order: 3; min-height: 12rem; }
+    .fan { order: 2; height: min(58svh, 27rem); --w: clamp(7rem, 30vw, 11rem); --step: 8deg; --spread: 14%; }
     .kach__grid, .part__grid { grid-template-columns: 1fr; }
     .kach__fox { width: 90px; right: 3vw; }
     .shop { grid-template-columns: auto 1fr; }
@@ -222,10 +234,11 @@
     .fin__copy { top: calc(var(--bar-h) + .6rem); bottom: auto; }
     .walkers { width: 104px; }
   }
-  @media (max-width: 860px) and (pointer: coarse) { .vk-stage { padding-block: calc(var(--bar-h) + .5rem) 2rem; } }
+  @media (hover: none) { .vkf__hint::after { content: " Нажмите на любую."; } }
   @media (prefers-reduced-motion: reduce) {
     .hero__cloud { display: none; }
     .walkers.is-walking img { animation: none; }
+    .vk, .vkf__info { transition: none; }
   }
   /* текст на телефоне не мельче 15 px */
   @media (max-width: 600px) { .v-page { --v-t-xs: .9375rem; --v-t-sm: .9375rem; } .v-page .demo-for { font-size: .875rem; } }
@@ -286,31 +299,35 @@
       </div>
     </section>
 
-    <!-- 3 · ВЫБОР: четыре вкуса, лента -->
-    <section id="vkusy" data-v-act="pan" data-v-span="4" data-v-drift="#12304a" aria-label="Коллекция: четыре вкуса">
-      <div data-v-stage class="vk-stage">
-        <div class="vk-rail" data-v-pan="0.04">
+    <!-- 3 · ВЫБОР: четыре вкуса, веер -->
+    <section id="vkusy" class="v-section vkf" data-v-act="flow" data-v-drift="#12304a" aria-label="Коллекция: четыре вкуса">
+      <div class="v-wrap vkf__grid">
+        <div class="vkf__side">
           <div class="vk-intro">
             <h2 class="v-display v-display--lg">Четыре вкуса</h2>
             <p>Каждый в своей упаковке. Выбирайте по картинке, состав на плитке и здесь.</p>
           </div>
-          <article class="vk">
-            <div class="vk__img"><img src="assets/bar1.webp" alt="Плитка в малиновой упаковке" width="700" height="940" loading="lazy"></div>
+          <div class="vkf__info" aria-live="polite">
+            <p class="vkf__hint">Наведите на плитку – она выдвинется из веера.</p>
+          </div>
+        </div>
+        <div class="fan" role="list">
+          <article class="vk" role="listitem" style="--i:0">
+            <button class="vk__pick" type="button" aria-label="Вкус 1, малиновая упаковка"><img src="assets/bar1.webp" alt="" width="700" height="940" loading="lazy"></button>
             <div class="vk__t"><h3>{{вкус-1}}</h3><p>{{описание вкуса 1}}</p><p class="vk__sostav">Состав: {{состав}}</p></div>
           </article>
-          <article class="vk vk--sun">
-            <div class="vk__img"><img src="assets/bar2.webp" alt="Плитка в солнечно-жёлтой упаковке" width="700" height="940" loading="lazy"></div>
+          <article class="vk vk--sun" role="listitem" style="--i:1">
+            <button class="vk__pick" type="button" aria-label="Вкус 2, солнечно-жёлтая упаковка"><img src="assets/bar2.webp" alt="" width="700" height="940" loading="lazy"></button>
             <div class="vk__t"><h3>{{вкус-2}}</h3><p>{{описание вкуса 2}}</p><p class="vk__sostav">Состав: {{состав}}</p></div>
           </article>
-          <article class="vk vk--sea">
-            <div class="vk__img"><img src="assets/bar3.webp" alt="Плитка в синей упаковке" width="700" height="940" loading="lazy"></div>
+          <article class="vk vk--sea" role="listitem" style="--i:2">
+            <button class="vk__pick" type="button" aria-label="Вкус 3, синяя упаковка"><img src="assets/bar3.webp" alt="" width="700" height="940" loading="lazy"></button>
             <div class="vk__t"><h3>{{вкус-3}}</h3><p>{{описание вкуса 3}}</p><p class="vk__sostav">Состав: {{состав}}</p></div>
           </article>
-          <article class="vk vk--cocoa">
-            <div class="vk__img"><img src="assets/bar4.webp" alt="Плитка в какао-коричневой упаковке" width="700" height="940" loading="lazy"></div>
+          <article class="vk vk--cocoa" role="listitem" style="--i:3">
+            <button class="vk__pick" type="button" aria-label="Вкус 4, какао-коричневая упаковка"><img src="assets/bar4.webp" alt="" width="700" height="940" loading="lazy"></button>
             <div class="vk__t"><h3>{{вкус-4}}</h3><p>{{описание вкуса 4}}</p><p class="vk__sostav">Состав: {{состав}}</p></div>
           </article>
-          <div class="vk-end" aria-hidden="true"></div>
         </div>
       </div>
     </section>
@@ -434,31 +451,40 @@
     window.addEventListener('resize', place); place();
   })();
 
-  // Кнопки «Вкус 1–4» в шапке: прокрутка к нужному вкусу в блоке коллекции.
+  // Веер вкусов: наведение (или нажатие) выдвигает плитку, рядом – её описание.
+  (function () {
+    var fan = document.querySelector('.fan'), info = document.querySelector('.vkf__info');
+    var cards = [].slice.call(fan.querySelectorAll('.vk')), hint = info.innerHTML;
+    var hover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    function on(k) {
+      cards.forEach(function (c, i) { c.classList.toggle('is-on', i === k); c.querySelector('.vk__pick').setAttribute('aria-pressed', i === k); });
+      fan.classList.toggle('has-on', k >= 0);
+      if (k < 0) { info.classList.remove('is-on'); info.style.removeProperty('--bg'); info.style.removeProperty('--fg'); info.innerHTML = hint; return; }
+      var cs = getComputedStyle(cards[k]);
+      info.style.setProperty('--bg', cs.getPropertyValue('--bg')); info.style.setProperty('--fg', cs.getPropertyValue('--fg'));
+      info.innerHTML = cards[k].querySelector('.vk__t').innerHTML; info.classList.add('is-on');
+    }
+    window.vkOn = on;
+    cards.forEach(function (c, i) {
+      var b = c.querySelector('.vk__pick');
+      if (hover) c.addEventListener('mouseenter', function () { on(i); });
+      b.addEventListener('focus', function () { on(i); });
+      b.addEventListener('click', function () { on(hover || !c.classList.contains('is-on') ? i : -1); });
+    });
+    if (hover) fan.addEventListener('mouseleave', function () { on(-1); });
+  })();
+
+  // Кнопки «Вкус 1–4» в шапке: прокрутка к вееру и выдвинутая плитка.
   (function () {
     var sec = document.getElementById('vkusy'), bar = document.querySelector('.bar');
     var smooth = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
-    function go(k) {
-      var vh = window.innerHeight, top = sec.getBoundingClientRect().top + window.scrollY, h = sec.offsetHeight, y;
-      var pan = sec.querySelector('[data-v-pan]');
-      if (pan) {
-        var stage = sec.querySelector('[data-v-stage]'), el = sec.querySelectorAll('.vk')[k];
-        var left = el.getBoundingClientRect().left - pan.getBoundingClientRect().left;
-        if (window.matchMedia('(pointer: coarse)').matches) {
-          window.scrollTo({ top: top - bar.offsetHeight, behavior: smooth });
-          stage.scrollTo({ left: left - parseFloat(getComputedStyle(pan).paddingLeft), behavior: smooth });
-          return;
-        }
-        var travel = Math.max(pan.scrollWidth - stage.clientWidth, 0) * 1.04;
-        var p = Math.min(1, Math.max(0, (left + el.offsetWidth / 2 - stage.clientWidth / 2) / travel));
-        y = top + p * (h - vh);
-      } else {
-        y = top + [0.12, 0.38, 0.63, 0.86][k] * (h - vh);
-      }
-      window.scrollTo({ top: y, behavior: smooth });
-    }
     document.querySelectorAll('.bar__flav a').forEach(function (a) {
-      a.addEventListener('click', function (e) { e.preventDefault(); go(+a.getAttribute('data-flavor')); });
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        var top = sec.getBoundingClientRect().top + window.scrollY - bar.offsetHeight;
+        window.scrollTo({ top: top, behavior: smooth });
+        window.vkOn(+a.getAttribute('data-flavor'));
+      });
     });
   })();
 </script>
