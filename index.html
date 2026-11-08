@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow" data-publish>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ни в сказке сказать, ни пером описать · шоколад со сказкой</title>
+<meta name="description" content="Шоколад в сказочной упаковке: четыре вкуса, состав назван на каждой плитке. Где купить: Wildberries, Ozon, Яндекс Маркет. Для магазинов – сотрудничество.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:site_name" content="Ни в сказке сказать, ни пером описать">
+<meta property="og:title" content="Шоколад со сказкой: четыре вкуса">
+<meta property="og:description" content="Плитки в упаковке с историей: состав и вкус выбираете по картинке, купить можно в один клик.">
+<meta property="og:url" content="{{адрес сайта}}">
+<meta property="og:image" content="{{адрес сайта}}/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#12304a">
+<link rel="preload" as="image" href="assets/sky-m.webp" media="(max-width: 860px)" fetchpriority="high">
+<link rel="preload" as="image" href="assets/sky.webp" media="(min-width: 861px)" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ruslan+Display&family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%277%27 fill=%27%23e8467c%27/%3E%3Crect x=%277%27 y=%278%27 width=%2718%27 height=%2717%27 rx=%273%27 fill=%27%235a3320%27/%3E%3Cpath d=%27M16 8v17M7 16.5h18%27 stroke=%27%23ffc53d%27 stroke-width=%271.6%27/%3E%3C/svg%3E">
+<link rel="stylesheet" href="vibe.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"Ни в сказке сказать, ни пером описать","description":"Шоколад в сказочной упаковке: четыре вкуса, состав назван на каждой плитке.","url":"{{адрес сайта}}","logo":"{{адрес сайта}}/assets/og.jpg","telephone":"{{телефон}}"}
+</script>
+<!-- Аналитика: сюда код счётчика {{счётчик-метрики}} -->
+<style>
+  /* ---- тема: шесть цветов, два шрифта ------------------------------------
+     Ночное море + солнечный жёлтый. Малина, мята-синь и какао живут только в иллюстрациях и панелях вкусов. */
+  .v-page {
+    --v-canvas: #12304a; --v-surface: #1b4468;
+    --v-ink: #fff6e3; --v-ink-soft: #b7d0dd;           /* 8,6:1 на холсте */
+    --v-accent: #ffc53d; --v-accent-ink: #2a1a05;      /* 9,3:1 на холсте, 10,8:1 текст на кнопке */
+    --v-font-display: "Ruslan Display", "Georgia", serif;
+    --v-font-text: "Onest", "Segoe UI", system-ui, sans-serif;
+    --v-shadow-color: 3 14 26;
+    --v-radius: 18px;
+    --v-section: clamp(3.5rem, 8vw, 7rem);
+    --v-display-weight: 400;
+    --v-track-tight: 0;
+    --v-track-normal: 0;
+    --v-ink-night: #0a2238;
+  }
+  html, body { background: #12304a; }
+  .v-page .v-display { font-weight: 400; line-height: 1.04; }
+  .v-page .v-display--xl { font-size: clamp(2.3rem, 1rem + 3.4vw, 4.3rem); line-height: 1.04; }
+  .v-page .v-lede { line-height: 1.5; max-width: 36ch; }
+  .v-page .v-btn { font-size: var(--v-t-base); font-weight: 600; }
+  .v-page [id] { scroll-margin-top: 4.5rem; }
+
+  /* ---- шапка ------------------------------------------------------------ */
+  .bar { position: fixed; inset: 0 0 auto 0; z-index: 30; display: flex; align-items: center; justify-content: space-between;
+    padding: var(--v-3) var(--v-gutter); gap: var(--v-4);
+    background: linear-gradient(to bottom, rgb(10 34 56 / .7), rgb(10 34 56 / 0));
+    transition: background-color .3s var(--v-ease-out), box-shadow .3s var(--v-ease-out); }
+  .bar.is-scrolled { background: rgb(10 34 56 / .9); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); box-shadow: 0 1px 0 var(--v-hair); }
+  .bar__mark { font-family: var(--v-font-display); font-size: clamp(1.15rem, 1rem + .7vw, 1.5rem); text-decoration: none; color: var(--v-ink); white-space: nowrap; }
+  .bar .v-btn { padding: .7em 1.3em; font-size: var(--v-t-sm); }
+  .bar__nav { display: flex; align-items: center; gap: var(--v-3); }
+  /* вкусы: маленькие шоколадные кнопки */
+  .bar__flav { display: flex; align-items: center; gap: .4rem; }
+  .v-page a.choc { display: inline-flex; align-items: center; padding: .4em .9em; border-radius: 999px; background: #4a2511; color: #ffd98a;
+    font-size: .8125rem; font-weight: 600; line-height: 1.2; text-decoration: none; white-space: nowrap;
+    box-shadow: inset 0 0 0 1px rgb(255 217 138 / .4), 0 2px 6px rgb(0 0 0 / .25); transition: transform .16s var(--v-ease-out), background-color .16s; }
+  .v-page a.choc:active { transform: scale(.97); }
+  @media (hover: hover) and (pointer: fine) { .v-page a.choc:hover { background: #64361a; } }
+  @media (max-width: 1000px) { .bar__mark { display: none; } }
+  @media (max-width: 860px) {
+    .v-page { --bar-h: 7rem; }
+    .bar { flex-wrap: wrap; row-gap: .45rem; padding-block: .6rem .5rem; }
+    .bar__nav { order: 1; width: 100%; }
+    .bar__nav .v-btn { flex: 1; justify-content: center; padding: .65em .6em; }
+    .bar__flav { order: 2; width: 100%; gap: .35rem; }
+    .v-page a.choc { flex: 1; justify-content: center; padding: .45em .3em; font-size: var(--v-t-sm); }
+    .v-page [id] { scroll-margin-top: var(--bar-h); }
+  }
+
+  /* ---- 1. первый экран: облака расходятся, слои едут с разной скоростью -- */
+  .hero__back img { position: absolute; left: -2%; top: -6%; width: 104%; height: 114%; max-width: none; object-fit: cover; object-position: 60% 50%; }
+  .hero__scrim { position: absolute; inset: 0; z-index: 2; pointer-events: none;
+    background: radial-gradient(90% 85% at 0% 30%, rgb(8 40 64 / .62) 0%, rgb(8 40 64 / .28) 45%, transparent 72%); }
+  .hero__bar { z-index: 3; }
+  .hero__bar img { right: 3vw; bottom: -6vh; height: 68svh; width: auto; filter: drop-shadow(0 22px 28px rgb(3 14 26 / .45)); }
+  .hero__fox { z-index: 3; }
+  .hero__fox img { left: 34vw; bottom: -4vh; height: 34svh; width: auto; filter: drop-shadow(0 14px 18px rgb(3 14 26 / .4)); }
+  .demo-for img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; flex: none; box-shadow: 0 0 0 2px rgb(255 255 255 / .85); }
+  .v-page .demo-for { display: inline-flex; align-items: center; gap: .6em; margin: 0 0 var(--v-3); padding: .25em .9em .25em .3em; border-radius: 999px; font-size: .8125rem; font-weight: 500; line-height: 1.3;
+    color: var(--v-ink); background: rgb(10 34 56 / .55); box-shadow: inset 0 0 0 1px rgb(255 197 61 / .55); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+  .hero__copy { z-index: 4; left: var(--v-gutter); top: clamp(5.5rem, 14vh, 9rem); bottom: auto; max-width: min(36rem, 90vw); }
+  .hero__word { font-family: var(--v-font-display); font-size: clamp(1.2rem, 1rem + 1vw, 1.8rem); line-height: 1.12; color: var(--v-accent); margin: 0 0 var(--v-4); max-width: 26ch; text-wrap: balance; text-shadow: 0 2px 10px rgb(4 22 38 / .55); }
+  .hero__copy .v-display { text-shadow: 0 2px 22px rgb(4 22 38 / .5); max-width: 15ch; }
+  .hero__copy .v-lede { margin-top: var(--v-4); text-shadow: 0 1px 12px rgb(4 22 38 / .7); }
+  .hero__cloud { position: absolute; top: -40svh; height: 150svh; z-index: 5; pointer-events: none; will-change: transform; }
+  .hero__cloud img { display: block; height: 100%; width: auto; max-width: none; will-change: transform; }
+  .hero__cloud--l { left: 0; animation: part-l 2.6s cubic-bezier(.62, 0, .18, 1) .5s both; }
+  .hero__cloud--r { right: 0; animation: part-r 2.6s cubic-bezier(.62, 0, .18, 1) .5s both; }
+  .hero__cloud--l img { transform: translate3d(calc(var(--v-p, 0) * -12%), 0, 0); }
+  .hero__cloud--r img { transform: translate3d(calc(var(--v-p, 0) * 12%), 0, 0) scaleX(-1); }
+  @keyframes part-l { to { transform: translate3d(-80%, 0, 0); } }
+  @keyframes part-r { to { transform: translate3d(80%, 0, 0); } }
+
+  /* ---- спутники: девочка и лиса идут по странице вместе со скроллом ------ */
+  .walkers { position: fixed; left: 0; bottom: 4px; z-index: 6; width: clamp(130px, 16vw, 250px); pointer-events: none; opacity: 0;
+    transition: opacity .5s var(--v-ease-out); will-change: transform; }
+  .walkers.is-on { opacity: 1; }
+  .walkers img { width: 100%; height: auto; transform-origin: 50% 100%; }
+  .walkers.is-back img { transform: scaleX(-1); }
+  .walkers.is-walking img { animation: step .46s ease-in-out infinite; }
+  .walkers.is-back.is-walking img { animation-name: step-back; }
+  @keyframes step { 50% { transform: translateY(-5px) rotate(-1.2deg); } }
+  @keyframes step-back { 0%, 100% { transform: scaleX(-1); } 50% { transform: scaleX(-1) translateY(-5px) rotate(-1.2deg); } }
+
+  /* ---- 2. история: дорога к замку ---------------------------------------- */
+  .story__back img { position: absolute; left: -2%; top: -6%; width: 104%; height: 114%; max-width: none; object-fit: cover; }
+  .story__copy { z-index: 3; left: var(--v-gutter); top: clamp(5.5rem, 15vh, 9rem); bottom: auto; max-width: min(34rem, 88vw);
+    padding: clamp(1.1rem, 2.4vw, 2rem) clamp(1.2rem, 2.6vw, 2.2rem); border-radius: 24px; background: rgb(10 34 56 / .9);
+    -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); box-shadow: var(--v-e2); }
+  .story__copy p { font-size: var(--v-t-lg); line-height: 1.5; max-width: 30ch; }
+  .story__slot { color: var(--v-ink-soft); }
+
+  /* ---- 3. коллекция: боковая лента из четырёх вкусов ---------------------- */
+  .vk-stage { display: flex; align-items: center; padding-top: 3.5rem; scroll-padding-inline: var(--v-gutter); }
+  .vk-rail { align-items: center; padding-inline: var(--v-gutter); gap: clamp(1rem, 2.4vw, 2rem); }
+  .vk-intro { flex: 0 0 auto; width: min(24rem, 78vw); padding-right: var(--v-5); }
+  .vk-intro p { margin-top: var(--v-4); color: var(--v-ink-soft); max-width: 26ch; }
+  .vk { --bg: #e8467c; --fg: #2b0a17; --tilt: -5deg;
+    position: relative; flex: 0 0 auto; width: min(66vw, 46rem); height: min(70svh, 36rem); border-radius: 28px; overflow: visible;
+    background: var(--bg); color: var(--fg); box-shadow: var(--v-e2);
+    display: grid; grid-template-columns: 1.05fr .95fr; align-items: stretch; padding: clamp(1.4rem, 2.6vw, 2.4rem); }
+  .vk::before { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; opacity: .5;
+    background: radial-gradient(70% 60% at 82% 38%, rgb(255 255 255 / .4), transparent 70%); }
+  .vk__img { position: absolute; right: 3%; bottom: 4%; width: 52%; height: 108%; display: flex; align-items: flex-end; justify-content: center; pointer-events: none; }
+  .vk__img img { width: auto; max-width: 100%; max-height: 100%; transform: rotate(var(--tilt)); filter: drop-shadow(0 20px 22px rgb(20 6 14 / .38)); }
+  .vk__t { position: relative; z-index: 2; display: flex; flex-direction: column; max-width: 20rem; }
+  .vk__t h3 { font-family: var(--v-font-display); font-weight: 400; font-size: clamp(2rem, 1.3rem + 2.2vw, 3.4rem); line-height: 1.05; }
+  .vk__t p { margin-top: var(--v-3); font-size: var(--v-t-sm); line-height: 1.5; }
+  .vk__t .vk__sostav { margin-top: auto; padding-top: var(--v-4); font-weight: 500; opacity: .86; }
+  .vk--sun { --bg: #ffc53d; --fg: #3a2300; --tilt: 4deg; }
+  .vk--sea { --bg: #2c6fe0; --fg: #f4f8ff; --tilt: -3deg; }
+  .vk--cocoa { --bg: #5a3320; --fg: #fff0d6; --tilt: 5deg; }
+  .vk-end { flex: 0 0 var(--v-gutter); }
+
+  /* ---- 4. качество ------------------------------------------------------- */
+  .kach { position: relative; overflow: hidden; }
+  .kach__grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: clamp(2rem, 6vw, 6rem); align-items: start; }
+  .kach__rows { display: flex; flex-direction: column; }
+  .kach__row { padding-block: var(--v-5); border-top: 1px solid var(--v-hair-strong); }
+  .kach__row:last-child { border-bottom: 1px solid var(--v-hair-strong); }
+  .kach__row b { display: block; font-family: var(--v-font-display); font-weight: 400; font-size: var(--v-t-xl); color: var(--v-accent); margin-bottom: var(--v-2); }
+  .kach__row span { color: var(--v-ink-soft); }
+  .kach__fox { position: absolute; right: 2vw; bottom: -1px; width: clamp(110px, 15vw, 220px); pointer-events: none; }
+
+  /* ---- 5. где купить ----------------------------------------------------- */
+  .gde { position: relative; }
+  .gde::before { content: ""; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(40rem 24rem at var(--v-mx, 70%) var(--v-my, 30%), rgb(255 197 61 / .14), transparent 70%); }
+  .gde__head { max-width: 38rem; }
+  .gde__head p { color: var(--v-ink-soft); margin-top: var(--v-3); }
+  .shops { margin-top: var(--v-7); border-top: 1px solid var(--v-hair-strong); }
+  .shop { --c: #ffc53d; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: var(--v-5); padding: clamp(1.1rem, 2.6vw, 2rem) clamp(.5rem, 1.5vw, 1.25rem);
+    border-bottom: 1px solid var(--v-hair-strong); text-decoration: none; position: relative; isolation: isolate;
+    transition: color .18s var(--v-ease-out); }
+  .shop::before { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--c); transform: scaleY(0); transform-origin: 50% 100%; transition: transform .22s var(--v-ease-out); }
+  .shop__dot { width: clamp(1.1rem, 2.4vw, 1.7rem); height: clamp(1.1rem, 2.4vw, 1.7rem); border-radius: 50%; background: var(--c); transition: background-color .18s; }
+  .shop__name { font-family: var(--v-font-display); font-size: clamp(1.9rem, 1.1rem + 3.4vw, 4rem); line-height: 1.05; }
+  .shop__go { font-weight: 600; font-size: var(--v-t-sm); padding: .6em 1.1em; border-radius: 999px; box-shadow: inset 0 0 0 1px var(--v-hair-strong); white-space: nowrap; transition: box-shadow .18s, background-color .18s; }
+  .shop--wb { --c: #cb11ab; } .shop--oz { --c: #2d6bff; } .shop--ym { --c: #ffcc00; }
+  .shop:active .shop__go { transform: scale(.97); }
+  @media (hover: hover) and (pointer: fine) {
+    .shop:hover::before { transform: scaleY(1); }
+    .shop:hover .shop__dot { background: var(--v-ink); }
+    .shop--ym:hover { color: #2a1a05; }
+    .shop--ym:hover .shop__dot { background: #2a1a05; }
+    .shop--ym:hover .shop__go { box-shadow: inset 0 0 0 1px #2a1a05; }
+    .shop:hover .shop__go { box-shadow: inset 0 0 0 1px currentColor; }
+  }
+
+  /* ---- 6. сотрудничество ------------------------------------------------- */
+  .part__grid { display: grid; grid-template-columns: .8fr 1fr; gap: clamp(2rem, 6vw, 6rem); align-items: center; }
+  .part__fig { position: relative; border-radius: 26px; overflow: hidden; box-shadow: var(--v-e2); aspect-ratio: 3 / 4; max-height: 80svh; justify-self: center; width: min(100%, 30rem); }
+  .part__fig img { width: 100%; height: 100%; object-fit: cover; }
+  .part__txt p { color: var(--v-ink-soft); max-width: 34ch; }
+  .part__txt .part__slot { margin-top: var(--v-4); color: var(--v-ink); }
+  .part__act { margin-top: var(--v-5); }
+
+  /* ---- 7. финал ---------------------------------------------------------- */
+  .fin__back img { position: absolute; left: -2%; top: -6%; width: 104%; height: 114%; max-width: none; object-fit: cover; object-position: 70% 50%; }
+  .fin__scrim { position: absolute; inset: 0; z-index: 2; pointer-events: none;
+    background: radial-gradient(90% 90% at 0% 100%, rgb(6 24 42 / .85) 0%, rgb(6 24 42 / .5) 45%, transparent 75%); }
+  .fin__copy { z-index: 3; }
+  .fin__copy .v-display { margin-bottom: var(--v-4); }
+  .fin__act { display: flex; flex-wrap: wrap; align-items: center; gap: var(--v-3) var(--v-4); }
+  .v-page .fin__act a.v-btn--ghost { color: #fff; box-shadow: inset 0 0 0 2px rgb(255 255 255 / .85); }
+  .v-page .fin__act a.v-btn--ghost:hover { box-shadow: inset 0 0 0 2px #fff; }
+  .fin__contacts { display: flex; flex-wrap: wrap; gap: var(--v-3) var(--v-6); margin-top: var(--v-5); color: var(--v-ink-soft); font-size: var(--v-t-sm); }
+  .fin__contacts b { display: block; color: var(--v-ink); font-weight: 500; }
+  .foot { padding: var(--v-5) var(--v-gutter); display: flex; flex-wrap: wrap; gap: var(--v-2) var(--v-6); justify-content: space-between; font-size: var(--v-t-xs); color: var(--v-ink-soft); background: #0a2238; }
+
+  /* ---- телефон ------------------------------------------------------------ */
+  @media (max-width: 860px) {
+    .hero__scrim { background: linear-gradient(to bottom, rgb(8 40 64 / .72) 0%, rgb(8 40 64 / .42) 42%, transparent 66%); }
+    #top [data-v-stage] { background: linear-gradient(to bottom, #09485c 0%, #0d8590 30%); }
+    .hero__back img { top: 17%; height: 100%; -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 14%); mask-image: linear-gradient(to bottom, transparent 0, #000 14%); }
+    .hero__bar img { right: -2vw; bottom: -3svh; height: 36svh; }
+    .hero__fox img { left: 4vw; bottom: -2svh; height: 21svh; }
+    .hero__copy { left: var(--v-gutter); right: var(--v-gutter); top: calc(var(--bar-h) + .5rem); max-width: none; }
+    .hero__copy .v-display { max-width: 13ch; }
+    .story__copy { right: var(--v-gutter); max-width: none; top: calc(var(--bar-h) + .5rem); }
+    .vk { width: 84vw; height: min(72svh, 33rem); grid-template-columns: 1fr; align-items: end; }
+    .vk__img { right: 4%; bottom: auto; top: -9%; width: 74%; height: 64%; }
+    .vk__t { max-width: none; align-self: end; }
+    .vk__t .vk__sostav { margin-top: var(--v-4); }
+    .kach__grid, .part__grid { grid-template-columns: 1fr; }
+    .kach__fox { width: 90px; right: 3vw; }
+    .shop { grid-template-columns: auto 1fr; }
+    .shop__go { grid-column: 2; justify-self: start; }
+    .fin__back img { object-position: 82% 50%; }
+    .fin__scrim { background: linear-gradient(to bottom, rgb(6 24 42 / .9) 0%, rgb(6 24 42 / .62) 45%, transparent 72%); }
+    .fin__copy { top: calc(var(--bar-h) + .6rem); bottom: auto; }
+    .walkers { width: 104px; }
+  }
+  @media (max-width: 860px) and (pointer: coarse) { .vk-stage { padding-block: calc(var(--bar-h) + .5rem) 2rem; } }
+  @media (prefers-reduced-motion: reduce) {
+    .hero__cloud { display: none; }
+    .walkers.is-walking img { animation: none; }
+  }
+  /* текст на телефоне не мельче 15 px */
+  @media (max-width: 600px) { .v-page { --v-t-xs: .9375rem; --v-t-sm: .9375rem; } .v-page .demo-for { font-size: .875rem; } }
+</style>
+</head>
+<body>
+<div class="v-page">
+  <span data-v-progress></span>
+  <div class="v-grain" aria-hidden="true"></div>
+
+  <header class="bar">
+    <a class="bar__mark" href="#top" title="Ни в сказке сказать, ни пером описать">Ни в сказке сказать</a>
+    <nav class="bar__flav" aria-label="Вкусы"><a class="choc" href="#vkusy" data-flavor="0">Вкус 1</a><a class="choc" href="#vkusy" data-flavor="1">Вкус 2</a><a class="choc" href="#vkusy" data-flavor="2">Вкус 3</a><a class="choc" href="#vkusy" data-flavor="3">Вкус 4</a></nav>
+    <nav class="bar__nav" aria-label="Быстрые ссылки"><a class="v-btn" href="#partner">Стать партнёром</a><a class="v-btn" href="#gde">Где купить</a></nav>
+  </header>
+
+  <div class="walkers" aria-hidden="true"><img src="assets/walkers.webp" alt="" width="600" height="400" decoding="async"></div>
+
+  <main>
+
+    <!-- 1 · УЗНАВАНИЕ: облака расходятся, за ними замок, дорога, лиса и плитка -->
+    <section id="top" data-v-act="pin" data-v-span="2.2" data-v-drift="#12304a" aria-label="Шоколад со сказкой">
+      <div data-v-stage>
+        <div class="v-layer hero__back" data-v-parallax="-0.3">
+          <picture>
+            <source media="(max-width: 860px)" srcset="assets/sky-m.webp">
+            <img src="assets/sky.webp" alt="" width="1920" height="1080" fetchpriority="high">
+          </picture>
+        </div>
+        <div class="hero__scrim" aria-hidden="true"></div>
+        <div class="v-layer hero__fox" data-v-parallax="-0.6"><img src="assets/fox.webp" alt="Лиса из сказочного мира бренда" width="700" height="800"></div>
+        <div class="v-layer hero__bar" data-v-parallax="-0.95"><img src="assets/bar1.webp" alt="Плитка шоколада в иллюстрированной упаковке" width="700" height="940"></div>
+        <div class="hero__cloud hero__cloud--l" aria-hidden="true"><img src="assets/cloud.webp" alt="" width="1400" height="788"></div>
+        <div class="hero__cloud hero__cloud--r" aria-hidden="true"><img src="assets/cloud.webp" alt="" width="1400" height="788"></div>
+        <div class="v-copy hero__copy" data-v-cue="0 0.8 0">
+          <p class="demo-for"><img src="assets/zakazchik.jpg" alt="" width="40" height="40">Демо для Ивана · по заказу «Создание сайта»</p>
+          <p class="hero__word">Ни в сказке сказать, ни пером описать</p>
+          <h1 class="v-display v-display--xl" data-v-kinetic="lines">Шоколад со сказкой: четыре вкуса</h1>
+          <p class="v-lede">Плитки в упаковке с историей: состав и вкус выбираете по картинке, купить можно в один клик.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2 · ПОВОРОТ: у шоколада есть свой мир -->
+    <section id="istoriya" data-v-act="pin" data-v-span="2.4" data-v-drift="#163a58" aria-label="История бренда">
+      <div data-v-stage>
+        <div class="v-layer story__back" data-v-parallax="-0.4"><img src="assets/story.webp" alt="Девочка и лиса идут по золотой дороге к замку" width="1920" height="1080" loading="lazy"></div>
+        <div class="v-copy story__copy" data-v-cue="0 0.3 0.06 0.05">
+          <h2 class="v-display v-display--md" data-v-kinetic="lines">Ни в сказке сказать, ни пером описать</h2>
+        </div>
+        <div class="v-copy story__copy" data-v-cue="0.3 0.64 0.05 0.05">
+          <p>Так говорят о том, что слишком хорошо для слов. Так мы и назвали наш шоколад.</p>
+          <p style="margin-top:var(--v-4)">У него свой мир: замок, дорога к нему, девочка и лиса, которые идут по ней. Он живёт на каждой упаковке.</p>
+        </div>
+        <div class="v-copy story__copy" data-v-cue="0.66 1 0.05 0">
+          <p class="story__slot">{{история бренда}}</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 · ВЫБОР: четыре вкуса, лента -->
+    <section id="vkusy" data-v-act="pan" data-v-span="4" data-v-drift="#12304a" aria-label="Коллекция: четыре вкуса">
+      <div data-v-stage class="vk-stage">
+        <div class="vk-rail" data-v-pan="0.04">
+          <div class="vk-intro">
+            <h2 class="v-display v-display--lg">Четыре вкуса</h2>
+            <p>Каждый в своей упаковке. Выбирайте по картинке, состав на плитке и здесь.</p>
+          </div>
+          <article class="vk">
+            <div class="vk__img"><img src="assets/bar1.webp" alt="Плитка в малиновой упаковке" width="700" height="940" loading="lazy"></div>
+            <div class="vk__t"><h3>{{вкус-1}}</h3><p>{{описание вкуса 1}}</p><p class="vk__sostav">Состав: {{состав}}</p></div>
+          </article>
+          <article class="vk vk--sun">
+            <div class="vk__img"><img src="assets/bar2.webp" alt="Плитка в солнечно-жёлтой упаковке" width="700" height="940" loading="lazy"></div>
+            <div class="vk__t"><h3>{{вкус-2}}</h3><p>{{описание вкуса 2}}</p><p class="vk__sostav">Состав: {{состав}}</p></div>
+          </article>
+          <article class="vk vk--sea">
+            <div class="vk__img"><img src="assets/bar3.webp" alt="Плитка в синей упаковке" width="700" height="940" loading="lazy"></div>
+            <div class="vk__t"><h3>{{вкус-3}}</h3><p>{{описание вкуса 3}}</p><p class="vk__sostav">Состав: {{состав}}</p></div>
+          </article>
+          <article class="vk vk--cocoa">
+            <div class="vk__img"><img src="assets/bar4.webp" alt="Плитка в какао-коричневой упаковке" width="700" height="940" loading="lazy"></div>
+            <div class="vk__t"><h3>{{вкус-4}}</h3><p>{{описание вкуса 4}}</p><p class="vk__sostav">Состав: {{состав}}</p></div>
+          </article>
+          <div class="vk-end" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4 · ДОКАЗАТЕЛЬСТВО: состав назван -->
+    <section id="kachestvo" class="v-section kach" data-v-act="flow" data-v-drift="#163a58" aria-label="Качество">
+      <div class="v-wrap kach__grid">
+        <div class="v-stack" data-v-in data-v-stagger="80">
+          <h2 class="v-display v-display--md">Состав и особенности – ознакомьтесь перед покупкой</h2>
+          <p class="v-body v-soft">Что внутри плитки, откуда какао и где её делают – пишем прямо, без «секретных ингредиентов».</p>
+        </div>
+        <div class="kach__rows" data-v-in data-v-stagger="90">
+          <div class="kach__row"><b>Состав</b><span>{{состав}}</span></div>
+          <div class="kach__row"><b>Какао</b><span>{{происхождение какао}}</span></div>
+          <div class="kach__row"><b>Производство</b><span>{{производство}}</span></div>
+        </div>
+      </div>
+      <img class="kach__fox" src="assets/fox.webp" alt="" width="700" height="800" loading="lazy" style="transform:scaleX(-1)">
+    </section>
+
+    <!-- 5 · ДЕЙСТВИЕ: где купить -->
+    <section id="gde" class="v-section gde" data-v-act="flow" data-v-spotlight data-v-drift="#12304a" aria-label="Где купить">
+      <div class="v-wrap">
+        <div class="gde__head" data-v-in data-v-stagger="80">
+          <h2 class="v-display v-display--lg">Где купить</h2>
+          <p>Выберите магазин – откроется страница с плитками.</p>
+        </div>
+        <div class="shops" data-v-in data-v-stagger="90">
+          <a class="shop shop--wb" href="{{ссылка-wildberries}}" rel="noopener"><i class="shop__dot" aria-hidden="true"></i><span class="shop__name">Wildberries</span><span class="shop__go">Открыть магазин</span></a>
+          <a class="shop shop--oz" href="{{ссылка-ozon}}" rel="noopener"><i class="shop__dot" aria-hidden="true"></i><span class="shop__name">Ozon</span><span class="shop__go">Открыть магазин</span></a>
+          <a class="shop shop--ym" href="{{ссылка-яндекс-маркет}}" rel="noopener"><i class="shop__dot" aria-hidden="true"></i><span class="shop__name">Яндекс Маркет</span><span class="shop__go">Открыть магазин</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6 · СОТРУДНИЧЕСТВО -->
+    <section id="partner" class="v-section" data-v-act="flow" data-v-drift="#163a58" aria-label="Сотрудничество">
+      <div class="v-wrap part__grid">
+        <figure class="part__fig" data-v-reveal="up" data-v-reveal-at="0.1 0.5" data-v-tilt="4"><img src="assets/shop.webp" alt="Сказочная лавка с шоколадом, на пороге сидит лиса" width="1200" height="1600" loading="lazy"></figure>
+        <div class="part__txt v-stack" data-v-in data-v-stagger="80">
+          <h2 class="v-display v-display--lg">Поставьте сказку на свою полку</h2>
+          <p>Магазинам, кофейням и подарочным лавкам: напишите, расскажем об условиях.</p>
+          <p class="part__slot">{{условия партнёрства}}</p>
+          <div class="part__act"><a class="v-btn v-btn--ghost" href="{{контакт-партнёров}}" rel="noopener">Стать партнёром</a></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7 · КОНТАКТЫ: ночь над долиной, последний акт держит реплику -->
+    <section id="kontakty" data-v-act="pin" data-v-span="1.6" data-v-drift="#0a2238" aria-label="Контакты">
+      <div data-v-stage>
+        <div class="v-layer fin__back" data-v-parallax="-0.3"><img src="assets/finale.webp" alt="Ночью в окнах замка горит свет, девочка и лиса смотрят на него с холма" width="1920" height="1080" loading="lazy"></div>
+        <div class="fin__scrim" aria-hidden="true"></div>
+        <div class="v-copy v-copy--lead fin__copy" data-v-cue="0.04">
+          <h2 class="v-display v-display--lg">Найдите свою плитку</h2>
+          <div class="fin__act">
+            <a class="v-btn" href="#gde" data-v-magnet="0.25" data-v-rise="0">Где купить</a>
+            <a class="v-btn v-btn--ghost" href="#top">Возврат на первую страницу</a>
+          </div>
+          <div class="fin__contacts">
+            <span><b>Телефон</b><a href="tel:{{телефон}}">{{телефон}}</a></span>
+            <span><b>Мы в соцсетях</b>{{соцсети}}</span>
+            <span><b>Для магазинов</b><a href="{{контакт-партнёров}}">{{контакт-партнёров}}</a></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <footer class="foot">
+    <span>Ни в сказке сказать, ни пером описать</span>
+    <span data-slot-optional>{{юрлицо}} · ИНН {{ИНН}}</span>
+  </footer>
+</div>
+
+<script src="vibe.js"></script>
+<script>
+  // На телефоне пины короче: data-v-span из CSS не поменять, правим атрибут до монтирования.
+  if (window.matchMedia('(max-width: 860px)').matches) {
+    document.getElementById('top').setAttribute('data-v-span', '1.6');
+    document.getElementById('istoriya').setAttribute('data-v-span', '2');
+    document.getElementById('kontakty').setAttribute('data-v-span', '1.4');
+  }
+  Vibe.mount(document.querySelector('.v-page'));
+
+  // Страховка: если анимация облаков не доиграла (энергосбережение, вкладка в фоне), через 7 с убираем их мягко.
+  var cloudsDone = false;
+  document.querySelector('.hero__cloud--l').addEventListener('animationend', function () { cloudsDone = true; });
+  setTimeout(function () {
+    if (cloudsDone) return;
+    document.querySelectorAll('.hero__cloud').forEach(function (c) { c.style.transition = 'opacity .6s'; c.style.opacity = '0'; });
+  }, 7000);
+
+  // Шапка: подложка после 40 px прокрутки.
+  (function () {
+    var bar = document.querySelector('.bar'), on = null;
+    function tick() { var s = window.scrollY > 40; if (s !== on) { on = s; bar.classList.toggle('is-scrolled', s); } }
+    window.addEventListener('scroll', tick, { passive: true }); tick();
+  })();
+
+  // Девочка и лиса идут по низу страницы вместе со скроллом: x по прогрессу страницы, шаг только пока крутим.
+  (function () {
+    var el = document.querySelector('.walkers'), last = window.scrollY, idle = null, ticking = false;
+    var fin = document.getElementById('kontakty');
+    function place() {
+      ticking = false;
+      var y = window.scrollY, vh = window.innerHeight, max = document.documentElement.scrollHeight - vh;
+      var t = max > 0 ? Math.min(1, Math.max(0, y / max)) : 0;
+      var w = el.offsetWidth, x = 12 + t * (window.innerWidth - w - 24);
+      el.style.transform = 'translate3d(' + x.toFixed(1) + 'px,0,0)';
+      var finTop = fin.getBoundingClientRect().top;
+      el.classList.toggle('is-on', y > vh * 1.1 && finTop > vh * 0.55);
+      if (y !== last) {
+        el.classList.toggle('is-back', y < last);
+        el.classList.add('is-walking');
+        clearTimeout(idle); idle = setTimeout(function () { el.classList.remove('is-walking'); }, 160);
+        last = y;
+      }
+    }
+    window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(place); } }, { passive: true });
+    window.addEventListener('resize', place); place();
+  })();
+
+  // Кнопки «Вкус 1–4» в шапке: прокрутка к нужному вкусу в блоке коллекции.
+  (function () {
+    var sec = document.getElementById('vkusy'), bar = document.querySelector('.bar');
+    var smooth = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+    function go(k) {
+      var vh = window.innerHeight, top = sec.getBoundingClientRect().top + window.scrollY, h = sec.offsetHeight, y;
+      var pan = sec.querySelector('[data-v-pan]');
+      if (pan) {
+        var stage = sec.querySelector('[data-v-stage]'), el = sec.querySelectorAll('.vk')[k];
+        var left = el.getBoundingClientRect().left - pan.getBoundingClientRect().left;
+        if (window.matchMedia('(pointer: coarse)').matches) {
+          window.scrollTo({ top: top - bar.offsetHeight, behavior: smooth });
+          stage.scrollTo({ left: left - parseFloat(getComputedStyle(pan).paddingLeft), behavior: smooth });
+          return;
+        }
+        var travel = Math.max(pan.scrollWidth - stage.clientWidth, 0) * 1.04;
+        var p = Math.min(1, Math.max(0, (left + el.offsetWidth / 2 - stage.clientWidth / 2) / travel));
+        y = top + p * (h - vh);
+      } else {
+        y = top + [0.12, 0.38, 0.63, 0.86][k] * (h - vh);
+      }
+      window.scrollTo({ top: y, behavior: smooth });
+    }
+    document.querySelectorAll('.bar__flav a').forEach(function (a) {
+      a.addEventListener('click', function (e) { e.preventDefault(); go(+a.getAttribute('data-flavor')); });
+    });
+  })();
+</script>
+</body>
+</html>
