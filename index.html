@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="robots" content="noindex, nofollow" data-publish>
+
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Ни в сказке сказать, ни пером описать · шоколад со сказкой</title>
 <meta name="description" content="Шоколад в сказочной упаковке: четыре вкуса, состав назван на каждой плитке. Где купить: Wildberries, Ozon, Яндекс Маркет. Для магазинов – сотрудничество.">
@@ -123,7 +124,7 @@
   .story__slot { color: var(--v-ink-soft); }
 
   /* ---- 3. коллекция: веер из четырёх плиток ------------------------------ */
-  .vkf__grid { display: grid; grid-template-columns: minmax(18rem, .8fr) 1.2fr; gap: clamp(1.5rem, 4vw, 4rem); align-items: center; }
+  .vkf__grid { display: grid; grid-template-columns: minmax(17rem, .7fr) 1.3fr; gap: clamp(1.5rem, 4vw, 4rem); align-items: center; }
   .vkf__side { display: flex; flex-direction: column; gap: var(--v-6); }
   .vk-intro p { margin-top: var(--v-4); color: var(--v-ink-soft); max-width: 26ch; }
   .vkf__info { --bg: rgb(255 255 255 / .06); --fg: var(--v-ink); position: relative; min-height: 15rem; border-radius: 28px; padding: clamp(1.4rem, 2.4vw, 2.2rem);
@@ -143,7 +144,7 @@
     position: absolute; left: 50%; bottom: 4%; width: var(--w); margin-left: calc(var(--w) / -2); z-index: calc(var(--i) + 1);
     transform-origin: 50% 150%;
     transform: translateX(calc((var(--i) - 1.5) * var(--spread))) rotate(var(--a));
-    transition: transform .5s cubic-bezier(.2, .9, .25, 1.15), filter .35s var(--v-ease-out); }
+    transition: transform .5s cubic-bezier(.2, .9, .25, 1.15); }
   .vk--sun { --bg: #ffc53d; --fg: #3a2300; }
   .vk--sea { --bg: #2c6fe0; --fg: #f4f8ff; }
   .vk--cocoa { --bg: #5a3320; --fg: #fff0d6; }
@@ -151,10 +152,15 @@
   .vk__pick { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: pointer; border-radius: 14px; }
   .vk__pick img { display: block; width: 100%; height: auto; filter: drop-shadow(0 18px 20px rgb(4 14 26 / .5)); }
   .vk__pick:focus-visible { outline: 3px solid #ffc53d; outline-offset: 6px; }
-  .fan.has-on .vk { filter: brightness(.72) saturate(.85); }
-  .fan.has-on .vk:not(.is-on) { transform: translateX(calc((var(--i) - 1.5) * var(--spread) * 1.08)) rotate(calc(var(--a) * 1.12)); }
-  .fan .vk.is-on { z-index: 9; filter: none;
-    transform: translateX(calc((var(--i) - 1.5) * var(--spread))) rotate(calc(var(--a) * .25)) translateY(-17%) scale(1.1); }
+  /* курсор над веером (или выбрана плитка) – веер раскрывается в ряд без перекрытий,
+     и мышь спокойно ведётся по плиткам слева направо; выбранная поднимается вверх */
+  .fan { --gap-step: calc(var(--w) * .82); --sc: .72; }
+  .fan.has-on .vk { transform: translateX(calc((var(--i) - 1.5) * var(--gap-step))) translateY(-14%) rotate(calc((var(--i) - 1.5) * 2deg)) scale(var(--sc)); }
+  .fan .vk.is-on { transform: translateX(calc((var(--i) - 1.5) * var(--gap-step))) translateY(-30%) rotate(0deg) scale(calc(var(--sc) + .04)); }
+  @media (hover: hover) and (pointer: fine) {
+    .fan:hover .vk { transform: translateX(calc((var(--i) - 1.5) * var(--gap-step))) translateY(-14%) rotate(calc((var(--i) - 1.5) * 2deg)) scale(var(--sc)); }
+    .fan:hover .vk.is-on { transform: translateX(calc((var(--i) - 1.5) * var(--gap-step))) translateY(-30%) rotate(0deg) scale(calc(var(--sc) + .04)); }
+  }
 
   /* ---- 4. качество ------------------------------------------------------- */
   .kach { position: relative; overflow: hidden; }
@@ -224,7 +230,7 @@
     .vkf__grid { grid-template-columns: 1fr; }
     .vkf__side { display: contents; }
     .vkf__info { order: 3; min-height: 12rem; }
-    .fan { order: 2; height: min(58svh, 27rem); --w: clamp(7rem, 30vw, 11rem); --step: 8deg; --spread: 14%; }
+    .fan { order: 2; height: min(58svh, 27rem); --w: clamp(7rem, 30vw, 11rem); --step: 8deg; --spread: 14%; --gap-step: calc(var(--w) * .74); --sc: .66; }
     .kach__grid, .part__grid { grid-template-columns: 1fr; }
     .kach__fox { width: 90px; right: 3vw; }
     .shop { grid-template-columns: auto 1fr; }
